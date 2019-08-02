@@ -28,3 +28,13 @@ body {
     position: relative;
     top: 485px;
 }
+
+.firstP{
+    font-size: 21px;
+    font-family: Helvetica;
+    color: white;
+    font-weight: 800;
+    letter-spacing: 8.9px;
+    margin-bottom: 10px;
+
+}
