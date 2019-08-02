@@ -33,8 +33,22 @@ body {
     font-size: 21px;
     font-family: Helvetica;
     color: white;
-    font-weight: 800;
-    letter-spacing: 8.9px;
+    font-weight: 600;
+    letter-spacing: 8.4px;
     margin-bottom: 10px;
 
+}
+
+.secondP{
+    font-family: Helvetica;
+    font-weight: 200;
+    font-size: 8px;
+    color: #82DFF4;
+    letter-spacing: 6.5px;
+
+
+}
+
+.form-control{
+    
 }
