@@ -1,14 +1,22 @@
-html{
-    background:rgb(21, 20, 20);
-}
-    body{
-        background: url(GlobalMap.png); 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-blend-mode: lighten;
-        opacity: 0.2;
-        
 
-          }
+
+    
+
+body {
+    background-color:rgb(21, 20, 20);
+    position: relative;
+    overflow: hidden;
+}
+.my-container {
+    padding: 200px;
+    position: relative;
+    z-index: 2;
+} 
+.backgroundImage {
+    position: absolute;
+    top:-4px;
+    left:-8px;
+    height: 100vh;
+    min-width: 102vw;
+    opacity: 0.2;
+}
