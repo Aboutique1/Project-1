@@ -23,3 +23,8 @@ body {
     height: 115px;
     width: 293px;
 }
+
+#inputs{
+    position: relative;
+    top: 485px;
+}
