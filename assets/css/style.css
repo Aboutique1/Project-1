@@ -50,5 +50,30 @@ body {
 }
 
 .form-control{
-    
+    background-color:#151414;
+    color: white;
+    text-align: center;
+    width: 405px;
+    height: 61px;
+    font-size: 13px;
+    letter-spacing: 7px;
+
+}
+
+.centeredCol{
+    margin: 0 auto;
+}
+
+#advance{
+    width: 199px;
+    height: 50px;
+    border-radius: 24px;
+    border: 2px solid white;
+    background-color: #000;
+    font-family: Helvetica;
+    font-size: 13px;
+    font-weight: 700;
+    color: white; 
+    letter-spacing: 5px;
+
 }
