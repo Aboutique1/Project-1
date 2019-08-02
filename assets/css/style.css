@@ -15,3 +15,11 @@ body {
     min-width: 102vw;
     opacity: 0.2;
 }
+
+.sJaLogo{
+    position: absolute; 
+    top: 19px;
+    left: 40px;
+    height: 115px;
+    width: 293px;
+}
