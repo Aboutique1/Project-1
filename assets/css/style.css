@@ -7,11 +7,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-.my-container {
-    padding: 200px;
-    position: relative;
-    z-index: 2;
-} 
 .backgroundImage {
     position: absolute;
     top:-4px;
