@@ -1,10 +1,14 @@
 html{
-    background:rgb(21, 20, 20)
+    background:rgb(21, 20, 20);
 }
-   body{
+    body{
         background: url(GlobalMap.png); 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-      }
+        background-blend-mode: lighten;
+        opacity: 0.18;
+        
+
+          }
