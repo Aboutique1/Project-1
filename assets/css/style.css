@@ -86,7 +86,7 @@ body {
     letter-spacing: 5px;
     margin-top: 79px;
     position: relative;
-    left: 35px;
+    left: 39px;
     transition: all 0.2s;
 
 }
@@ -104,7 +104,7 @@ body {
     letter-spacing: 5px;
     margin-top: 79px;
     position: relative;
-    left: 35px;
+    left: 39px;
 
 }
 
@@ -116,12 +116,20 @@ body {
 
 
 
-.moveLeft{
+.colmoveLeft{
     position: relative;
     right:50px;
 }
 
-.moveRight{
+.colmoveRight{
     position: relative;
     left:20px;
+}
+
+.googleIcon{
+  width: 16px;
+  position: relative;
+  bottom:45px;
+  left:366px;
+  
 }
