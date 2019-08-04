@@ -5,10 +5,11 @@
 body {
     background-color:rgb(21, 20, 20);
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    padding-bottom:300px;
 }
 .backgroundImage {
-    position: absolute;
+    position: fixed;
     top:-4px;
     left:-8px;
     height: 100vh;
@@ -42,7 +43,7 @@ body {
 .secondP{
     font-family: Helvetica;
     font-weight: 200;
-    font-size: 8px;
+    font-size: 10px;
     color: #82DFF4;
     letter-spacing: 6.5px;
 
@@ -51,13 +52,17 @@ body {
 
 .form-control{
     background-color:#151414!important;
-    color: white!important;
+    color: rgb(238, 223, 223)!important;
     text-align: center;
     width: 405px;
     height: 61px;
-    font-size: 13px;
+    font-size: 16px;
     letter-spacing: 7px;
     box-shadow: 0px 2px 10px 0px rgb(130,223,244);
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: rgb(10, 10, 10);
+    -webkit-text-fill-color: rgb(233, 232, 232);
+    text-shadow: 1px 0px 5px rgb(27, 28, 28);
     transition: box-shadow 0.7s;
     
 
@@ -90,6 +95,23 @@ body {
     transition: all 0.2s;
 
 }
+#advance:focus{
+    width: 199px;
+    height: 50px;
+    border-radius: 24px;
+    border: 2px solid white;
+    background-color: rgb(46, 46, 46);
+    font-family: Helvetica;
+    font-size: 13px;
+    font-weight: 700;
+    color: white; 
+    letter-spacing: 5px;
+    margin-top: 79px;
+    position: relative;
+    left: 39px;
+    outline:none;
+
+}
 
 #advance:active{
     width: 199px;
@@ -109,11 +131,12 @@ body {
 }
 
 #what{
-    background-image: url(./Magnify_glass.png);
-    background-repeat: no-repeat;
-    background-position: 2px 3px;
+    z-index: 1
 }
 
+#where{
+    z-index: 1
+}
 
 
 .colmoveLeft{
@@ -133,3 +156,122 @@ body {
   left:366px;
   
 }
+
+.searchIcon{
+    width: 18px;
+    position: relative;
+    bottom:45px;
+    left:366px;  
+}
+
+#dtBasicExample{
+    display:none;
+    position: relative;
+    top:220px;
+}
+
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+
+.dataTables_wrapper .dataTables_length {
+    float: left;
+    position: relative;
+    top:200px;
+    display:none
+
+}
+
+.dataTables_wrapper .dataTables_filter {
+    float: right;
+    text-align: right;
+    position: absolute;
+    top:200px;
+    left:650px;
+    display:none
+
+
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding-top: 0.25em;
+    position: absolute;
+    bottom:-250px;
+    left:650px;
+    display:none
+
+}
+
+.dataTables_wrapper .dataTables_info {
+    clear: both;
+    float: left;
+    color:white;
+    font-family:Helvetica;
+    padding-top: 0.755em;
+    position:relative;
+    top:240px;
+    display:none
+}
+
+.dataTables_wrapper {
+    z-index:-1;
+    position: relative;
+    clear: both;
+    *zoom: 1;
+    zoom: 1;
+
+}
+
+#map {
+    height: 300px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+    margin: 0 auto;
+    position: relative;   
+    bottom:-200px;
+    
+   }
+
+   #mapContainer{
+    position: relative;   
+    top:200;
+   }
+
+   .copyRight{
+    font-family: Helvetica-Light;
+    font-size: 9px;
+    color: #828282;
+    letter-spacing: 3.72px;
+    text-align: center;
+    position: absolute;
+    bottom:-250px;
+    padding-left:200px;
+    text-align: left;
+    opacity: 0.6;
+    background:transparent;
+   }
+
+   #brandLogo{
+       cursor:pointer;
+   }
+   tr:first-child{
+       display:none
+      }
+
+   tr:nth-child(2n+1){
+       color:grey !important;
+       border:2px solid blue
+   }
+
+   

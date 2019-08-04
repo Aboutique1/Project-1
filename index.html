@@ -2,51 +2,126 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    </title>
+  <link rel="icon" type="image/png" href="assets/css/img_35727-1.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/css/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/css/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/css/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/css/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/css/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/css/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/css/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/css/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/css/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/css/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/css/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/css/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/css/favicon-16x16.png">
+  <link rel="manifest" href="/assets/css/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/css/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css" />
+
+  <title>
+
+  </title>
 </head>
 
 <body>
-    <img src="assets/css/GlobalMap.png" class="backgroundImage" />
-    <img src="assets/css/sja_log_07_28_19 copy2.png" class="sJaLogo" />
-    <div class="container">
-        <div class="row" id="inputs">
-            <div class="col-sm-12 col-md-5 colmoveLeft">
-                <p class="firstP text-center">what</p>
-                <p class="secondP text-center">job title, keywords, or company</p>
-                <input type="text" class="form-control centeredCol" id="what">
-            </div>
-            <div class="col-sm-12 col-md-5 colmoveRight" >
-                <p class="firstP text-center">where</p>
-                <p class="secondP text-center">city, state, or zip code</p>
-                <input type="text" class="form-control centeredCol" id="where">
-                <img src="assets/css/google-location-icon-vector-google_places_pin_icon_black_white_line_art_coloring_book_colouring-555px.png" class="googleIcon"/>
-            </div>
-            <div class="col-sm-12 col-md-2"><button id="advance">Advance</button></div>
+  <img src="assets/css/GlobalMap.png" class="backgroundImage" />
+  <a id="brandLogo"><img src="assets/css/sja_log_07_28_19 copy2.png" class="sJaLogo" /></a>
+  <div class="container">
+    <div class="row" id="inputs">
+      <div class="col-sm-12 col-md-5 colmoveLeft">
+        <p class="firstP text-center">what</p>
+        <p class="secondP text-center">job title, keywords, or company</p>
+        <input type="text" class="form-control centeredCol" autocomplete="off" name="what" id="what" value="">
+        <img src="assets/css/Magnify_glass.png" class="searchIcon" />
+      </div>
+      <div class="col-sm-12 col-md-5 colmoveRight">
+        <p class="firstP text-center">where</p>
+        <p class="secondP text-center">city, state, country or zip code</p>
+        <input type="text" class="form-control centeredCol" id="where" autocomplete="off">
+        <img
+          src="assets/css/google-location-icon-vector-google_places_pin_icon_black_white_line_art_coloring_book_colouring-555px.png"
+          class="googleIcon" />
+      </div>
+      <div class="col-sm-12 col-md-2"><button id="advance">Advance</button></div>
 
 
-        </div>
+
     </div>
+  </div>
+  <div class="container">
+    <div id="map"></div>
+  </div>
 
-    </footer>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script src="assets/js/API.js"></script>
+
+  <div class="container">
+    <table id="dtBasicExample" class="table table-striped" cellspacing="0"
+      width="100%">
+      <thead>
+        <tr>
+          <th class="th-sm">Job Title
+          </th>
+          <th class="th-sm">Company
+          </th>
+          <th class="th-sm">Location
+          </th>
+          <th class="th-sm">Salary
+          </th>
+          <th class="th-sm">Source
+          </th>
+          <th class="th-sm">Schedule
+          </th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <th class="th-sm">Title
+          </th>
+          <th class="th-sm">Location
+          </th>
+          <th class="th-sm">Company
+          </th>
+          <th class="th-sm">Salary
+          </th>
+          <th class="th-sm">Source
+          </th>
+          <th class="th-sm">Schedule
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+
+  <p class="copyRight">&copy; 2019 sJa Search Job Advancement</p>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_XDDgdCA0ExFOpyC45djsNLP8biagwGM"></script>
+  <script src="https://cdn.jsdelivr.net/gmap3/7.2.0/gmap3.min.js"></script>
+  <script src="assets/js/API.js"></script>
 </body>
 
 </html>
