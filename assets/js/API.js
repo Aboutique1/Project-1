@@ -5,7 +5,6 @@ function testInput(){
 }
 
 $(document).ready(function(){
-  
     var keywordSearch = $("#what").val()        
 
     
@@ -134,11 +133,12 @@ $(document).ready(function(){
         $(".googleIcon").animate({left: "80%", top:"-38px", width:"10px"}, 800);
         $(".searchIcon").animate({left: "82%", top:"-38px", width:"14px" }, 800);
         $("#advance").animate({right:"50px",top:"-7px"}, 800);
-      setTimeout(function(){
-        $('#dtBasicExample').fadeIn(4100, function(){
+        $('#dtBasicExample').fadeIn(2000, function(){
             console.log('Table Fading In')
         })
-      }, 100)  
+        $('#tableBody').fadeIn(2000, function(){
+            console.log('Table Fading In')
+        })
      
 
 
