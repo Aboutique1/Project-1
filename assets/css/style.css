@@ -265,7 +265,7 @@ bottom: .5em;
    #brandLogo{
        cursor:pointer;
    }
-   tr:first-child{
+   #tableBody tr:first-child{
        display:none
       }
 
