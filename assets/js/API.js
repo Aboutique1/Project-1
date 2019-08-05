@@ -17,7 +17,13 @@ $(document).ready(function(){
 
     $("#advance").click(function(){
 
-        
+      $('#dtBasicExample').fadeOut(500, function(){
+        console.log('Table Fading In')
+    })
+
+   
+
+
 
             var city = $("#where").val();
             console.log(city)
@@ -151,12 +157,8 @@ $(document).ready(function(){
         $(".googleIcon").animate({left: "80%", top:"-38px", width:"10px"}, 800);
         $(".searchIcon").animate({left: "82%", top:"-38px", width:"14px" }, 800);
         $("#advance").animate({right:"50px",top:"-1px"}, 800);
-        $('#dtBasicExample').fadeIn(2000, function(){
-            console.log('Table Fading In')
-        })
-        $('#tableBody').fadeIn(2000, function(){
-            console.log('Table Fading In')
-        })
+        
+        
      
 
 
@@ -214,6 +216,14 @@ $('#tableBody').empty()
                     `
                 )
             }
+            $('#dtBasicExample').fadeIn(2000, function(){
+              console.log('Table Fading In')
+          })
+
+         
+
+         
+
         }
     }
     //Send request to the server
