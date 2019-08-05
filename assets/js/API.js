@@ -151,9 +151,9 @@ $(document).ready(function(){
 var keywordSearch = $("#what").val()     
 var keywordLocation = $("#where").val()        
 
-var url = "https://us.jooble.org/api/";
+var url = "https://cors-anywhere.herokuapp.com/https://us.jooble.org/api/";
 //"865766bc-4b97-4d89-ab0d-804949ff6e6d"."865766bc-4b97-4d89-ab0d-804949ff6e6d" backup key
-var key = "a238c5e5-9519-4ad0-a1b0-fe94306b62d7";
+var key = "865766bc-4b97-4d89-ab0d-804949ff6e6d";
 var params = "{ keywords:"+ "'" + keywordSearch +"'"+",location:"+ "'" + keywordLocation + "'"+"}"
 
 
@@ -206,6 +206,12 @@ $('#tableBody').empty()
        
      });
 
+     document.getElementById("advance").addEventListener("mouseleave", function(){
+         document.getElementById("advance").style.background = "black"
+     });
+     document.getElementById("advance").addEventListener("click", function(){
+        document.getElementById("advance").style.backgroundColor = "#2e2e2e"
+    });
 
     $('#brandLogo').click(function(){
         location.reload()
