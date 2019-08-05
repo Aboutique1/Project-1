@@ -14,7 +14,6 @@ $(document).ready(function(){
    
 
     
-    
 
     $("#advance").click(function(){
 
@@ -89,6 +88,7 @@ $(document).ready(function(){
                 lat_long[1] = data.results[0].geometry.location.lng
                 var nameOfPlace = data.results[0].address_components[0].long_name
                
+                
 
                 addMarker(lat_long[0],lat_long[1], nameOfPlace )
 
@@ -125,9 +125,11 @@ $(document).ready(function(){
                       {name: "Showing Results for "+data.results[0].address_components[0].long_name}
                     )
                   .marker([
-                    {position:[lat_long[0],lat_long[1]]},
-                    {icon: "https://maps.google.com/mapfiles/marker_grey.png"}
-                  ])
+                    {position:[lat,long]},
+                    {icon: 'https://maps.google.com/mapfiles/marker_green.png'}
+                ]
+            
+            )
                   .wait(2000)
                 .fit()
                   
@@ -207,7 +209,6 @@ $('#tableBody').empty()
                     <td>${http.response.jobs[i].company}</td>\
                     <td>${http.response.jobs[i].location}</td>\
                     <td>${http.response.jobs[i].salary}</td>\
-                    <td>${http.response.jobs[i].source}</td>\
                     <td>${http.response.jobs[i].type}</td>\
                   </tr>\
                     `
