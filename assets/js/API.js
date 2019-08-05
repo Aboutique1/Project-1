@@ -41,11 +41,17 @@ $(document).ready(function(){
                 
                 $('#map').fadeIn("slow").gmap3({
                     center:[lat,long],
-                    zoom:4,
+                    zoom:13,
                     mapTypeId: "shadeOfGrey", // to select it directly
                   mapTypeControlOptions: {
                     mapTypeIds: [google.maps.MapTypeId.ROADMAP, "shadeOfGrey"]
                   }
+                  })
+                  .circle({
+                    center: [lat,long],
+                    radius:50,
+                    fillColor: "#FFFFFF",
+                    strokeColor: "#000000"
                   }).styledmaptype(
                       "shadeOfGrey",
                       [
@@ -69,6 +75,8 @@ $(document).ready(function(){
                     {position:[lat,long]},
                     {icon: 'https://maps.google.com/mapfiles/marker_green.png'}
                 ])
+                .wait(2000)
+                .fit()
                   
             }
       
@@ -86,11 +94,17 @@ $(document).ready(function(){
 
                 $('#map').fadeIn("slow").gmap3({
                     center:[lat_long[0],lat_long[1]],
-                    zoom:4,
+                    zoom:13,
                     mapTypeId: "shadeOfGrey", // to select it directly
                   mapTypeControlOptions: {
                     mapTypeIds: [google.maps.MapTypeId.ROADMAP, "shadeOfGrey"]
                   }
+                  })
+                  .circle({
+                    center: [lat_long[0],lat_long[1]],
+                    radius:50,
+                    fillColor: "#FFFFFF",
+                    strokeColor: "#000000"
                   }).styledmaptype(
                       "shadeOfGrey",
                       [
@@ -114,6 +128,8 @@ $(document).ready(function(){
                     {position:[lat_long[0],lat_long[1]]},
                     {icon: "https://maps.google.com/mapfiles/marker_grey.png"}
                   ])
+                  .wait(2000)
+                .fit()
                   
 
                
@@ -132,7 +148,7 @@ $(document).ready(function(){
         $(".sJaLogo").animate({width: "200px", height:"70px"}, 800);
         $(".googleIcon").animate({left: "80%", top:"-38px", width:"10px"}, 800);
         $(".searchIcon").animate({left: "82%", top:"-38px", width:"14px" }, 800);
-        $("#advance").animate({right:"50px",top:"-7px"}, 800);
+        $("#advance").animate({right:"50px",top:"-1px"}, 800);
         $('#dtBasicExample').fadeIn(2000, function(){
             console.log('Table Fading In')
         })
@@ -176,7 +192,13 @@ $('#tableBody').empty()
         if(http.readyState == 4 && http.status == 200) {
             console.log(http.response.jobs);
             var response = http.response.jobs
-
+          if(response.length == 0){
+            $('#dtBasicExample').remove()
+            $('#containerTable').empty()
+            $('#containerTable').append(
+                `<p class="noAdvancement text-center">No ${$('#what').val()} jobs in ${$('#where').val()} </p>`
+              )
+          }
             for(var i = 0; i<http.response.jobs.length;i++){
                 console.log(``)
                 $('#tableBody').append(
@@ -213,6 +235,17 @@ $('#tableBody').empty()
         document.getElementById("advance").style.backgroundColor = "#2e2e2e"
     });
 
+    // Execute a function when the user releases a key on the keyboard
+document.getElementById("advance").addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("advance").style.background = "black"
+  }
+});
+
     $('#brandLogo').click(function(){
         location.reload()
         console.log("Clicked")
@@ -228,6 +261,8 @@ whatInput.addEventListener("keyup", function(event) {
     event.preventDefault();
     // Trigger the button element with a click
     document.getElementById("advance").click();
+    document.getElementById("advance").style.background = "black"
+
   }
 });
 
@@ -241,6 +276,8 @@ whereInput.addEventListener("keyup", function(event) {
     event.preventDefault();
     // Trigger the button element with a click
     document.getElementById("advance").click();
+    document.getElementById("advance").style.background = "black"
+
   }
 });
 
